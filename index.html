@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      color: hsl(240, 38%, 20%);
+    }
+
+    body {
+      /* width: 100vw; */
+      height: 100vh;
+      background-image: url(./images/pattern-curve.svg);
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* min-height: 100vh; */
+    }
+
+    .wrapper {
+      width: 90%;
+      height: 90%;
+      display: flex;
+      /* align-items: center; */
+    }
+
+    .content-wrapper {
+      background-image: url(./images/pattern-quotes.svg);
+      background-repeat: no-repeat;
+      padding-top: 60px;
+      background-position: 50px top;
+      width: 60%;
+      /* height: 50%; */
+      align-self: center;
+      /* border: 2px solid red; */
+      position: relative;
+      left: 180px;
+      font-size: 32px;
+      font-weight: 300;
+      /* word-spacing: 10px; */
+      line-height: 40px;
+    }
+
+    .content {
+      margin-bottom: 30px;
+    }
+
+    .name-pos {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .name-pos span {
+      font-weight: 500;
+      color: hsl(240, 18%, 77%);
+    }
+
+    .image-wrapper {
+      width: 60%;
+      background-image: url(./images/pattern-bg.svg);
+      background-position: center center;
+      /* height: 100%; */
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* border: 2px solid red; */
+    }
+
+    .profile-image {
+      /* object-fit:; */
+      /* height: 70%; */
+      width: 65%;
+    }
+
+    #John {
+      display: none;
+      /* opacity: 1; */
+    }
+
+    .slider-wrapper {
+      position: relative;
+      align-self: self-start;
+    }
+
+    .slider {
+      background-color: white;
+      padding: 10px 0px;
+      border-radius: 20px;
+      display: flex;
+      position: absolute;
+      top: -22px;
+      left: 10.417vw;
+      box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.4);
+    }
+
+    .button {
+      display: inline;
+      margin: 0px 20px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: scale(1.3);
+    }
+
+    @media screen and (max-width: 800px) {
+      body {
+        background-position: left bottom;
+        /* overflow: auto; */
+      }
+
+      .wrapper {
+        overflow: auto;
+        flex-direction: column;
+      }
+
+      .content-wrapper {
+        /* overflow: auto; */
+        width: 100%;
+        order: 2;
+        left: 0px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: 30px;
+        height: 40%;
+        padding-top: 30px;
+        background-position: center top;
+      }
+
+      .image-wrapper {
+        /* height: 60%; */
+        width: 100%;
+        order: 1;
+      }
+
+      .image-wrapper .profile-image {
+        object-fit: contain;
+        height: 80%;
+        /* width: 80%; */
+      }
+
+      /* .slider-wrapper {
+        /* position: static; 
+        align-self: center;
+      } */
+      .slider {
+        top: -15px;
+        left: 27.778vw;
+        padding: 5px 0px;
+      }
+
+      .button {
+        margin: 0px 10px;
+      }
+
+      .name-pos {
+        font-size: 16px;
+      }
+
+      .name-pos span::before {
+        content: ' ';
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper" id="Tanya">
+    <div class="content-wrapper">
+      <div class="content">
+        “ I’ve been interested in coding for a while but never taken the jump, until now.
+        I couldn’t recommend this course enough. I’m now in the job of my dreams and so
+        excited about the future. ”
+      </div>
+      <div class="name-pos">
+        Tanya Sinclair &nbsp;&nbsp; <span>UX Engineer</span>
+      </div>
+    </div>
+    <div class="image-wrapper">
+      <img class="profile-image" src="./images/image-tanya.jpg" alt="">
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img src="./images/icon-prev.svg" alt="" class="button" id="prevTanya" onclick="TtoJ()">
+          <img src="./images/icon-next.svg" alt="" class="button" id="nextTanya" onclick="TtoJ()">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper" id="John">
+    <div class="content-wrapper">
+      <div class="content">
+        “ If you want to lay the best foundation possible I’d recommend taking this course.
+        The depth the instructors go into is incredible. I now feel so confident about
+        starting up as a professional developer. ”
+      </div>
+      <div class="name-pos">
+        John Tarkpor &nbsp;&nbsp; <span>Junior Front-end Developer</span>
+      </div>
+    </div>
+    <div class="image-wrapper">
+      <img class="profile-image" src="./images/image-john.jpg" alt="">
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img src="./images/icon-prev.svg" alt="" class="button" id="prevJohn" onclick="JtoT()">
+          <img src="./images/icon-next.svg" alt="" class="button" id="nextJohn" onclick="JtoT()">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function TtoJ() {
+      document.getElementById("Tanya").style.display = "none"
+      document.getElementById("John").style.display = "flex"
+    }
+    function JtoT() {
+      document.getElementById("John").style.display = "none"
+      document.getElementById("Tanya").style.display = "flex"
+    }
+  </script>
+</body>
+
+</html>
